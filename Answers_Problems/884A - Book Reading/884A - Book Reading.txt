@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main() {
+	int n, t, a;
+	cin >> n >> t;
+	for(int d = 1; ; ++d) {
+		cin >> a;
+		t -= 86400 - a;
+		if(t <= 0) {
+			cout << d << endl;
+			break;
+		}
+	}
+	return 0;
+}

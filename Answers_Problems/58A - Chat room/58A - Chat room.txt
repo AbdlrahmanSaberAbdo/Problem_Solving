@@ -1,0 +1,21 @@
+#include <iostream>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+    int c=0, a=0;
+    string baseword = "hello";
+    string word;
+    cin>>word;
+    for(int i=0; i<word.length(); i++) {
+            if(word[i] == baseword[a] ) {
+                c++;
+                a++;
+        }
+    }
+    if(c == 5) cout<<"YES"<<endl;
+    else cout<<"NO"<<endl;
+    return 0;
+}

@@ -1,0 +1,49 @@
+#include <iostream>
+ 
+using namespace std;
+char shape1[9];
+char shape2[9];
+char finall[9];
+int main()
+{
+    for(int i=0;i<9;i++)
+        cin>>shape1[i];
+    for(int i=0;i<9;i++)
+        cin>>shape2[i];
+ 
+    for(int i = 0;i<9;i++)
+    {
+        if(shape1[i]==shape2[i])
+            finall[i]=shape1[i];
+        else
+        {
+            if(((shape1[i]=='/'&&shape2[i]=='\\')||(shape2[i]=='/'&&shape1[i]=='\\')))
+                finall[i]='X';
+            else
+                {
+                    if(shape1[i]!='.')
+                        finall[i]=shape1[i];
+                    else
+                     finall[i]=shape2[i];
+                     }
+ 
+ 
+        }
+    }
+ 
+    int c = 0;
+    for(int i=0;i<9;i++)
+    {
+        if(c==3)
+        {
+           cout<<'\n';
+           c=0;
+        }
+ 
+        cout<<finall[i];
+        c++;
+    }
+ 
+ 
+    return 0;
+}

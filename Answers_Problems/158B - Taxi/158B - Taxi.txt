@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	long n, numTeam, arr[5] = { 0 }, total;
+	cin >> n;
+	for (int i = 0; i<n; i++) {
+		cin >> numTeam;
+		++arr[numTeam];
+	}
+	total = arr[4];
+
+	total += arr[3];//if num of team = 3 we must add 1 if found team it's number = 1 so we will erase 1
+	arr[1] -= arr[3];
+
+	total = total + ((arr[2] / 2) + arr[2] % 2);
+	arr[1] = arr[1] - 2 * (arr[2] % 2);
+
+	if (arr[1] > 0) {
+		total += arr[1] / 4 + ( (arr[1] % 4)  > 0);
+	}
+
+	cout << total;
+
+	return 0;
+}

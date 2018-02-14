@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+#include <set>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+	string name;
+	getline(cin, name);
+	int c=0;
+	set<char> name2;
+
+	set<char>::iterator name3;
+
+	for (int i = 0; i<name.length(); i++) {
+		name2.insert(name[i]);
+	}
+
+	name2.erase('{');
+	name2.erase('}');
+	name2.erase(',');
+	name2.erase(' ');
+	cout<<name2.size()<<endl;
+
+
+	return 0;
+}

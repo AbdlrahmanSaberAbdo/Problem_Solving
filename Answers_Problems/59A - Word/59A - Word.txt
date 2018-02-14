@@ -1,0 +1,30 @@
+#include <iostream>
+#include <algorithm>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int l=0, u=0;
+    string name;
+    cin>>name;
+    for(int i=0; i<name.length(); i++) {
+        if(isupper(name[i]) ) {
+            u++;
+        } else {
+            l++;
+        }
+    }
+    if(l >= u)
+    {
+        transform(name.begin(), name.end(), name.begin(), ::tolower);
+    }
+
+    else
+    {
+        transform(name.begin(), name.end(), name.begin(), ::toupper);
+    }
+
+    cout<<name;
+    return 0;
+}
